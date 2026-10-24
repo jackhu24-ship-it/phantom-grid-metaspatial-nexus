@@ -27,13 +27,13 @@
       top: 24px;
       left: 24px;
       z-index: 10;
-      background: rgba(10, 16, 30, 0.85);
+      background: rgba(10, 16, 30, 0.88);
       border: 1px solid #1e293b;
       border-radius: 8px;
       padding: 16px 20px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 20px rgba(0, 240, 255, 0.15);
-      max-width: 420px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 25px rgba(0, 240, 255, 0.15);
+      max-width: 440px;
     }
     .badge {
       display: inline-block;
@@ -43,9 +43,11 @@
       text-transform: uppercase;
       border-radius: 4px;
       margin-bottom: 8px;
+      margin-right: 6px;
     }
     .badge-cyan { background: rgba(0, 240, 255, 0.2); color: #00f0ff; border: 1px solid #00f0ff; }
     .badge-green { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+    .badge-gold { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
     .title {
       font-size: 16px;
       font-weight: 700;
@@ -69,24 +71,34 @@
     }
     .telemetry-label { color: #64748b; }
     .telemetry-val { font-family: monospace; font-weight: bold; color: #38bdf8; }
-    .btn-xr {
-      display: block;
-      width: 100%;
+    .btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
       margin-top: 12px;
+    }
+    .btn-xr {
       padding: 10px;
       background: linear-gradient(135deg, #00f0ff, #3b82f6);
       color: #050811;
       font-weight: 700;
-      font-size: 13px;
+      font-size: 12px;
       text-align: center;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.2s;
     }
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #050811;
+    }
     .btn-xr:hover {
       box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
       transform: translateY(-1px);
+    }
+    .btn-gold:hover {
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
     }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -94,18 +106,23 @@
 <body>
   <div class="hud-overlay">
     <div>
-      <span class="badge badge-cyan">Meta Quest Spatial Agentic Nexus</span>
+      <span class="badge badge-cyan">Meta Quest Spatial Nexus</span>
       <span class="badge badge-green">ASIL-D Certified</span>
+      <span class="badge badge-gold">Omni-Hand L1-L4</span>
     </div>
     <div class="title">PHANToM GRID :: Spatial Workbench</div>
-    <div class="subtitle">Hands-First 3D Agent Workflow Orchestrator for Meta Quest. Optical hand-tracking enabled with sub-millisecond tactile kinematic damping.</div>
+    <div class="subtitle">Hands-First 3D Agent Workflow Orchestrator for Meta Quest. Integrated with PG-MOD-OMNI-HAND-01 for direct external peripheral control (Blender, CAD, Host OS).</div>
     <div class="telemetry-row">
       <span class="telemetry-label">Active Agent Nodes:</span>
-      <span class="telemetry-val" id="val-nodes">4 Nodes (Planner, Executor, Sentry, ZDR)</span>
+      <span class="telemetry-val" id="val-nodes">5 Nodes (+ Omni-Hand External Bridge)</span>
     </div>
     <div class="telemetry-row">
       <span class="telemetry-label">Optical Hand Tracking:</span>
       <span class="telemetry-val" id="val-tracking">SIMULATED / WEBXR READY</span>
+    </div>
+    <div class="telemetry-row">
+      <span class="telemetry-label">External Peripheral Bridge:</span>
+      <span class="telemetry-val" style="color: #f59e0b;">L2 FastMCP / L3 CLI Active</span>
     </div>
     <div class="telemetry-row">
       <span class="telemetry-label">VRAM Guard Limit:</span>
@@ -115,7 +132,10 @@
       <span class="telemetry-label">Zero Data Residue (ZDR):</span>
       <span class="telemetry-val" style="color: #10b981;">0.000000 MB Residue</span>
     </div>
-    <button class="btn-xr" id="xr-button" onclick="triggerSpatialAction()">Trigger Spatial Air-Pinch Dispatch</button>
+    <div class="btn-group">
+      <button class="btn-xr" id="xr-button" onclick="triggerSpatialAction()">Air-Pinch Dispatch</button>
+      <button class="btn-xr btn-gold" id="dock-button" onclick="triggerOmniHandDock()">Omni-Hand Docking</button>
+    </div>
   </div>
 
   <div id="canvas-container"></div>
@@ -144,12 +164,13 @@
       dirLight.position.set(5, 10, 7);
       scene.add(dirLight);
 
-      // Create Agent Swarm Nodes
+      // Create Agent Swarm Nodes including Omni-Hand External Bridge
       const nodeConfigs = [
         { name: "Strategic Planner", pos: [-2.5, 1.2, 0], color: 0x00f0ff },
         { name: "Tactical Executor", pos: [2.5, 1.2, 0], color: 0x3b82f6 },
-        { name: "ASIL-D Sentry", pos: [0, -1.5, 0], color: 0x10b981 },
-        { name: "ZDR Memory Purger", pos: [0, 0, 1.5], color: 0xa855f7 }
+        { name: "ASIL-D Sentry", pos: [-1.2, -1.5, 0], color: 0x10b981 },
+        { name: "ZDR Memory Purger", pos: [1.2, -1.5, 0], color: 0xa855f7 },
+        { name: "Omni-Hand External Bridge", pos: [0, 0, 1.6], color: 0xf59e0b }
       ];
 
       nodeConfigs.forEach((cfg) => {
@@ -233,8 +254,27 @@
       });
 
       setTimeout(() => {
-        btn.innerText = "Trigger Spatial Air-Pinch Dispatch";
+        btn.innerText = "Air-Pinch Dispatch";
         btn.style.background = "linear-gradient(135deg, #00f0ff, #3b82f6)";
+      }, 1000);
+    }
+
+    function triggerOmniHandDock() {
+      const btn = document.getElementById('dock-button');
+      btn.innerText = "Docking Omni-Hand...";
+      btn.style.background = "#10b981";
+
+      const omniNode = nodes[4]; // Omni-Hand node
+      if (omniNode) {
+        omniNode.scale.set(1.8, 1.8, 1.8);
+        setTimeout(() => {
+          omniNode.scale.set(1.0, 1.0, 1.0);
+        }, 500);
+      }
+
+      setTimeout(() => {
+        btn.innerText = "Omni-Hand Docking";
+        btn.style.background = "linear-gradient(135deg, #f59e0b, #d97706)";
       }, 1000);
     }
 

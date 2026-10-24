@@ -4,7 +4,7 @@ import os
 # Ensure current directory is first in sys.path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from main import MetaSpatialOrchestrator, SpatialGesturePacket, ASILDMemorySentry, ZDRPurger
+from main import MetaSpatialOrchestrator, SpatialGesturePacket, ASILDMemorySentry, ZDRPurger, ExternalPeripheralController
 
 def test_sentry_headroom():
     sentry = ASILDMemorySentry(ceiling_gb=50.0)
@@ -36,7 +36,7 @@ def test_orchestrator_nominal_cycle():
 
 def test_multi_agent_dag_dispatch():
     orchestrator = MetaSpatialOrchestrator()
-    nodes = ["Strategic Planner", "Tactical Executor", "Safety Sentry", "ZDR Scrubber"]
+    nodes = ["Strategic Planner", "Tactical Executor", "Safety Sentry", "ZDR Scrubber", "Omni-Hand External Bridge"]
     for node in nodes:
         packet = SpatialGesturePacket(
             gesture_type="depth_poke",
@@ -47,7 +47,7 @@ def test_multi_agent_dag_dispatch():
         res = orchestrator.process_gesture(packet)
         assert res["status"] == "SUCCESS"
         assert res["target_node"] == node
-    print("PASS: test_multi_agent_dag_dispatch (4 Nodes)")
+    print("PASS: test_multi_agent_dag_dispatch (5 Nodes)")
 
 def test_vram_meltdown_breaker():
     orchestrator = MetaSpatialOrchestrator()
@@ -64,10 +64,27 @@ def test_vram_meltdown_breaker():
     except RuntimeError:
         print("PASS: test_vram_meltdown_breaker (ESTOP tripped)")
 
+def test_omni_hand_external_peripheral_control():
+    """Gate 6: Verifies PG-MOD-OMNI-HAND-01 external peripheral control pipeline."""
+    orchestrator = MetaSpatialOrchestrator()
+    packet = SpatialGesturePacket(
+        gesture_type="external_dock",
+        joint_coordinates=[0.5, 1.0, -0.3],
+        target_node_id="Omni-Hand External Bridge",
+        confidence_score=0.998,
+        external_app_intent="Render active 3DGS scene in Blender"
+    )
+    res = orchestrator.process_gesture(packet)
+    assert res["status"] == "SUCCESS"
+    assert res["external_control"] is not None
+    assert res["external_control"]["status"] == "DISPATCHED"
+    print("PASS: test_omni_hand_external_peripheral_control (PG-MOD-OMNI-HAND-01 Verified)")
+
 if __name__ == "__main__":
     test_sentry_headroom()
     test_zdr_purger()
     test_orchestrator_nominal_cycle()
     test_multi_agent_dag_dispatch()
     test_vram_meltdown_breaker()
-    print("\n[SUCCESS] ALL 5 RIGID INDUSTRIAL GATES 100% PASSED!")
+    test_omni_hand_external_peripheral_control()
+    print("\n[SUCCESS] ALL 6 RIGID INDUSTRIAL GATES (WITH OMNI-HAND) 100% PASSED!")
