@@ -11,7 +11,7 @@
 ---
 
 <p align="center">
-  <img src="03_CoverImage_16x9/cover_banner.svg" alt="PHANToM GRID MetaSpatial Banner" width="100%">
+  <img src="03_CoverImage_16x9/cover_image.png" alt="PHANToM GRID MetaSpatial Banner" width="100%">
   <br>
   <sub>🥽 <b>Meta VR Start Developer Competition 2026 // Productivity & Best Agentic Interaction Track</b></sub>
 </p>
