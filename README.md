@@ -25,7 +25,7 @@
 | 🌐 **Live WebXR Spatial Workbench** | Zero-Install Instant Launch on Meta Quest Browser | 👉 **[Launch Live WebXR App](https://jackhu24-ship-it.github.io/phantom-grid-metaspatial-nexus/)** |
 | 📜 **Architecture Whitepaper (SPEC-01)** | Formal Four Diagrams & One Table Specification Matrix | 👉 **[SPEC-01 Technical Whitepaper](01_Specs/SPEC_01_MetaSpatial_Architecture.md)** |
 | 📐 **Standalone System Blueprints (MMD)** | Topology, Sequence Flow, State Machine & Boundary | 👉 **[Mermaid Blueprints Directory](01_Specs/blueprints/)** |
-| 📊 **Executive Presentation Deck (Slides)** | 16:9 Cyberpunk Presentation Template | 👉 **[Executive Slides Template](04_Slides_PDF/slides_10page_template.html)** |
+| 📊 **Executive Presentation Deck (Slides)** | 16:9 Cyberpunk Presentation Template | 👉 **[10-Page Executive PDF Deck](04_Slides_PDF/PHANToM_GRID_MetaSpatial_Nexus_Executive_Presentation.pdf)** ｜ **[HTML Template](04_Slides_PDF/slides_10page_presentation.html)** |
 | 🧪 **Rigid Industrial Test Suite (5 Gates)** | 5/5 Deterministic Safety Assertions Verified | 👉 **[Automated Test Runner](02_SourceCode/test_runner.py)** |
 | 🛡️ **Cryptographic Audit Receipt (WORM)** | NIST SP 800-88 & ASIL-D SHA-256 Bitwise Signature | 👉 **[WORM Audit Receipt](08_AuditReceipts/WORM_AUDIT_RECEIPT.json)** |
 | ⚡ **Chaos Stress & Fault Recovery Audit** | 50 Consecutive Cycles with 100% Recovery Rate | 👉 **[Chaos Injection Report](09_ChaosReports/CHAOS_STRESS_REPORT.md)** |
