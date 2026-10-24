@@ -1,0 +1,9 @@
+{
+  "version": "v1.0.0-gold",
+  "release_date": "2026-10-25",
+  "build_target": "WebXR / Meta Quest Browser (Stationary Seated)",
+  "public_repo": "https://github.com/jackhu24-ship-it/phantom-grid-metaspatial-nexus",
+  "live_app": "https://jackhu24-ship-it.github.io/phantom-grid-metaspatial-nexus/",
+  "license": "MIT",
+  "sha256": "f617c332b6d33c6c2a203e69f79a5a4b436bb64c0c1569b130db65e0f41ee108"
+}

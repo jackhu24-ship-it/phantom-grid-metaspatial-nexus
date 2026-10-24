@@ -1,0 +1,40 @@
+# PHANToM GRID :: Security & Clean Git Invariants
+# Strictly blocks all sensitive credentials, passwords, tokens, and heavy binaries
+
+# Credentials & Passwords
+*CREDENTIALS*
+*IDENTITIES*
+*SECRET*
+*secret*
+*password*
+*.env
+*.env.*
+*.pem
+*.key
+*.token
+
+# Large Binaries (Constitution Rule 65 Clean Git)
+*.mp4
+*.avi
+*.mov
+*.pdf
+*.zip
+*.tar.gz
+*.exe
+*.apk
+
+# Python runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+.coverage
+htmlcov/
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini

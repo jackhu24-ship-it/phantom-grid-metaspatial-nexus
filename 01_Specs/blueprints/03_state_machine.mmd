@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> BOOT_INITIALIZING: WebXR Session Requested
+    BOOT_INITIALIZING --> SPATIAL_TRACKING_ACTIVE: Quest Hand Tracking Acquired
+    SPATIAL_TRACKING_ACTIVE --> GESTURE_INTERACTION: Pinch / Depth Poke Detected
+    GESTURE_INTERACTION --> AGENTIC_TASK_DISPATCH: Kinematic Filter Certified
+    AGENTIC_TASK_DISPATCH --> EXECUTION_VERIFIED: ASIL-D Safe Proof Signed
+    EXECUTION_VERIFIED --> SPATIAL_TRACKING_ACTIVE: Render 3D Anchor
+    AGENTIC_TASK_DISPATCH --> ESTOP_TRIPPED: Memory > 50GB / Fault
+    ESTOP_TRIPPED --> ZDR_PURGING: Execute 2-Pass Bitwise Scrub
+    ZDR_PURGING --> [*]: Clean Termination (0.000000 MB Residue)

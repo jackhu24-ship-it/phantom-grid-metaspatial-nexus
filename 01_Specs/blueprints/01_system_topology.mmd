@@ -1,0 +1,12 @@
+graph TD
+    User["👤 Operator (Meta Quest 3/Pro)"] -->|Optical Hand Tracking| WebXR["🌐 WebXR Spatial Interface (Three.js)"]
+    WebXR -->|Pinch / Poke / Drag Gestures| GestureEngine["🖐️ Kinematic Damping Gesture Engine"]
+    GestureEngine -->|Sub-millisecond Events| Bridge["⚡ Zero-Copy IPC Bridge (FastMCP)"]
+    Bridge -->|Async Action Queue| Orchestrator["🧠 Track A: Deterministic ASIL-D Orchestrator"]
+    Orchestrator --> AgentSwarm["🤖 Track B: Multi-Agent Swarm"]
+    AgentSwarm --> Planner["📋 Strategic Planner Node"]
+    AgentSwarm --> Executor["⚙️ Tactical Executor Node"]
+    AgentSwarm --> Sentry["🛡️ Safety Sentry (50GB Meltdown Guard)"]
+    Sentry --> ZDR["🧹 2-Pass ZDR Memory Purger (0xAA -> 0x00)"]
+    AgentSwarm --> Telemetry["📊 3D Spatial Manifold Telemetry"]
+    Telemetry -->|60-90 FPS Stream| WebXR

@@ -1,0 +1,21 @@
+graph LR
+    subgraph Meta_Quest_Client ["🥽 Meta Quest Client Space"]
+        WebXR_UI["Three.js Spatial Canvas"]
+        Hands["Optical Hand Mesh"]
+    end
+
+    subgraph ASIL_D_Secure_Core ["🛡️ ASIL-D Secure Boundary"]
+        Guard["50GB VRAM Meltdown Guard"]
+        StateMachine["Deterministic Orchestrator"]
+        ZDR_Scrubber["2-Pass Bitwise Purger"]
+    end
+
+    subgraph Ephemeral_Memory ["⚡ Zero-Retention Ring Buffer"]
+        Volatile["Shared Memory Buffers"]
+    end
+
+    WebXR_UI -->|Strict TLS / WSS| StateMachine
+    StateMachine --> Guard
+    Guard --> Volatile
+    Volatile -->|Post-Task Wipe (0xAA -> 0x00)| ZDR_Scrubber
+    ZDR_Scrubber -->|Cryptographic Receipt| WORM["Tamper-Proof WORM Log"]

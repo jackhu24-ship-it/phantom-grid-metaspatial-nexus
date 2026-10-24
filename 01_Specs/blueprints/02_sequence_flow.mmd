@@ -1,0 +1,16 @@
+sequenceDiagram
+    autonumber
+    actor Quest as 👤 Operator (Meta Quest)
+    participant WebXR as 🌐 WebXR Canvas
+    participant Bridge as ⚡ Gesture Bridge
+    participant Swarm as 🤖 Agent Swarm
+    participant Sentry as 🛡️ ASIL-D Sentry
+
+    Quest->>WebXR: Air-Pinch Gesture on Agent Node
+    WebXR->>Bridge: Transform Matrix & Raycast Event
+    Bridge->>Swarm: Dispatch Action Packet (Task Allocation)
+    Swarm->>Sentry: Check VRAM Threshold (< 50.0 GB)
+    Sentry-->>Swarm: Memory Allocation Certified
+    Swarm->>Swarm: Execute Distributed Task Graph
+    Swarm->>WebXR: Stream 3D Spatial Updates & Execution Proof
+    WebXR-->>Quest: Tactile Visual Pulse & Dynamic Manifold Update

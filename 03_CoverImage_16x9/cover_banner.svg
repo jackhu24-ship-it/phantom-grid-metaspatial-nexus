@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811"/>
+      <stop offset="50%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#050811"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <circle cx="960" cy="540" r="450" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="8 8"/>
+  <circle cx="960" cy="540" r="300" fill="none" stroke="#00f0ff" stroke-width="2" opacity="0.4"/>
+  <text x="960" y="380" font-family="monospace" font-size="28" fill="#00f0ff" font-weight="bold" text-anchor="middle" letter-spacing="4">META VR START DEVELOPER COMPETITION 2026</text>
+  <text x="960" y="470" font-family="system-ui, sans-serif" font-size="64" fill="#ffffff" font-weight="900" text-anchor="middle">PHANToM GRID :: MetaSpatial</text>
+  <text x="960" y="540" font-family="system-ui, sans-serif" font-size="36" fill="url(#accent)" font-weight="700" text-anchor="middle">Hands-First WebXR Agentic Workbench for Meta Quest</text>
+  <text x="960" y="630" font-family="monospace" font-size="22" fill="#94a3b8" text-anchor="middle">Optical Hand Tracking ✕ Three.js Spatial DAG ✕ ASIL-D 50GB Guard ✕ 2-Pass ZDR (0.00MB)</text>
+  <rect x="710" y="700" width="500" height="60" rx="30" fill="#00f0ff22" stroke="#00f0ff" stroke-width="2"/>
+  <text x="960" y="738" font-family="monospace" font-size="20" fill="#00f0ff" font-weight="bold" text-anchor="middle">SOLO ARCHITECT: JACK HU // COMMAND POST</text>
+</svg>

@@ -1,0 +1,6 @@
+Subsystem Component,Operational Scope,Safety Standard,Latency SLA Target,Failure Mitigation Mode
+WebXR Hand Tracker,Optical Joint Raycasting (25 joints/hand),Hands-First Ergonomics,11.1ms (90 FPS),Exponential Kinematic Damping
+3D Spatial Manifold,Three.js Node Anchoring & DAG Visualizer,Stationary Seated Comfort,16.6ms (60 FPS),Level-of-Detail Frustum Pruning
+Agent Orchestrator,4-Stage Task Pipeline (Plan Exec Audit),ASIL-D Deterministic,1.0ms scheduling,Local Fail-Safe Recovery
+Hardware Meltdown Guard,Continuous GPU/Host VRAM Monitoring,ISO 26262 ASIL-D,Hard Stop @ 50.0 GB,Immediate ESTOP Signal
+ZDR Memory Purger,2-Pass Bitwise Memory Scrubber (0xAA -> 0x00),NIST SP 800-88 R1,5.0ms per session,Cryptographic Residual Audit (0.000000 MB)
