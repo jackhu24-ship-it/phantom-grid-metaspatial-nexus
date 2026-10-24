@@ -57,3 +57,23 @@ We engineered this solution adhering to our strict **Spec-First Engineering Prot
 ## What's Next for PHANToM GRID :: MetaSpatial Agentic Nexus
 - Integrating Passthrough MR scene understanding (MRUK) to pin persistent agent nodes directly onto physical room walls and desks.
 - Expanding multi-user spatial collaboration enabling multiple Quest headsets to co-edit agent workflows in real-time.
+
+---
+SECTION 4: OFFICIAL ADDITIONAL INFO & TRACK SELECTION
+---
+
+* Submitter Type:
+Solo Developer (Solo HITL Architect: Jack Hu)
+
+* Target Track:
+Productivity (Best Agentic Interaction & Hands-First Spatial Productivity)
+
+* Start Program Membership Status:
+Registered & Active Meta Developer (Portal: https://developers.meta.com/vr/programs/start/apply/)
+Account Email: jackhu24@gmail.com
+
+* Playable Build Access URL (WebXR / Quest Browser):
+https://jackhu24-ship-it.github.io/phantom-grid-metaspatial-nexus/
+
+* Demo Video Master Access (116s / 1440P @ 60 FPS):
+https://github.com/jackhu24-ship-it/phantom-grid-metaspatial-nexus/blob/main/05_DemoVideo_1440P/demo_video_1440p.mp4
