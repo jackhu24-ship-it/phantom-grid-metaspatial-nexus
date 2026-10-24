@@ -22,6 +22,7 @@
 
 | Deliverable Target | Technical Specification & Standard | Direct Executive Access |
 | :--- | :--- | :---: |
+| 🎬 **Hollywood 1440P Demo Video** | 1:56 Broadcast Narration ✕ 60 FPS QHD Master Video | 👉 **[Watch 1440P Demo Video (GitHub Master)](05_DemoVideo_1440P/demo_video_1440p.mp4)** |
 | 🌐 **Live WebXR Spatial Workbench** | Zero-Install Instant Launch on Meta Quest Browser | 👉 **[Launch Live WebXR App](https://jackhu24-ship-it.github.io/phantom-grid-metaspatial-nexus/)** |
 | 📜 **Architecture Whitepaper (SPEC-01)** | Formal Four Diagrams & One Table Specification Matrix | 👉 **[SPEC-01 Technical Whitepaper](01_Specs/SPEC_01_MetaSpatial_Architecture.md)** |
 | 📐 **Standalone System Blueprints (MMD)** | Topology, Sequence Flow, State Machine & Boundary | 👉 **[Mermaid Blueprints Directory](01_Specs/blueprints/)** |
