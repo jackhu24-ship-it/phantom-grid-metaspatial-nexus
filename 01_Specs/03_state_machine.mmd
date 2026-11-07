@@ -1,0 +1,25 @@
+stateDiagram-v2
+    [*] --> Idle: Radial Space Calibrated & Memory Zeroed
+
+    Idle --> Validating: Optical air pinch detected
+    Validating --> Running: Confidence > 92% & VRAM < 50GB
+    Validating --> Rejected: Gesture malformed / Tracking lost
+
+    state Running {
+        [*] --> Decoupling
+        Decoupling --> Planning: Track A shell state locked
+        Planning --> Executing: Swarm DAG dispatched
+        Executing --> Docking: Omni-Hand FastMCP linked
+        Docking --> Verification: Execution proof validated
+    }
+
+    Running --> WaitingApproval: Sensitive host operation targeted
+    WaitingApproval --> Running: Air pinch authorization granted
+    WaitingApproval --> Rejected: 60s timeout / User canceled
+
+    Running --> Fused: VRAM >= 50.0 GB detected
+    Running --> Purging: All DAG nodes completed successfully
+    Fused --> Purging: Emergency ESTOP hardware trip
+
+    Purging --> Idle: 2-Pass ZDR 0.000000 MB confirmed & WORM sealed
+    Rejected --> Idle: Incident logged to immutable audit journal

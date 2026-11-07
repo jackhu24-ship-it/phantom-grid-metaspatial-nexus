@@ -1,0 +1,22 @@
+sequenceDiagram
+    autonumber
+    participant U as User / Quest Headset
+    participant W as WebXR Frontend (Three.js)
+    participant S as Track A Shell Loop
+    participant A as Agent Swarm Nodes
+    participant H as Omni-Hand Bridge
+    participant Z as 2-Pass ZDR Purger
+
+    U->>W: Load WebXR Experience URL in Quest Browser
+    Note over W: Calibrate 90FPS stationary radial space
+    U->>W: Perform Optical Air Pinch Gesture
+    W->>S: Stream 25-Joint coordinates with timestamp
+    S->>S: Apply 1.35x kinematic jitter damping filter
+    S->>A: Dispatch concurrent intent to Planner & Executor
+    A->>H: Transmit zero-copy FastMCP command
+    H-->>A: Return external host execution proof
+    A-->>S: Aggregate multi-agent execution telemetry
+    S->>Z: Trigger session zeroization protocol
+    Z-->>S: Bitwise wipe confirmed (0xAA -> 0x00, 0.000000 MB)
+    S-->>W: Update 3D spatial node state to Completed
+    W-->>U: Deliver visual holographic confirmation & WORM seal

@@ -1,0 +1,32 @@
+flowchart TD
+    subgraph WebXRLayer["1. WebXR Spatial Frontend Layer"]
+        Op["User / Quest Headset"] --> Quest["Meta Quest Browser (Stationary Radial Anchor)"]
+        Quest --> Tracking["Optical Hand Tracking (25 Joints / Hand)"]
+        Tracking --> Raycast["Air Pinch & Depth Poke Raycaster"]
+    end
+
+    subgraph TrackA["2. Track A: ASIL-D Shell State Machine"]
+        Raycast --> Damping["1.35x Kinematic Damping Filter"]
+        Damping --> Shell["Sub-Millisecond Shell State Machine"]
+        Shell --> Watchdog["50GB VRAM Hard Fuse Watchdog"]
+    end
+
+    subgraph TrackB["3. Track B: Autonomous Multi-Agent Swarm"]
+        Shell --> Planner["Strategic Planner Node"]
+        Shell --> Executor["Tactical Executor Node"]
+        Shell --> Sentry["Safety Sentry Node"]
+        Shell --> Scrubber["ZDR Scrubber Node"]
+    end
+
+    subgraph OmniHand["4. PG-MOD-OMNI-HAND-01 External Bridge"]
+        Executor --> L1["L1: Socket / COM Robotic Joint Link"]
+        Executor --> L2["L2: FastMCP Gateway (Blender / CAD)"]
+        Executor --> L3["L3: Headless Shell=False CLI Pipeline"]
+    end
+
+    subgraph DefenseLayer["5. ASIL-D Defense & Zero Data Retention"]
+        Watchdog --> ESTOP["50GB Emergency ESTOP Trip"]
+        Sentry --> ZDR["2-Pass ZDR Memory Purge (0xAA -> 0x00)"]
+        ESTOP --> ZDR
+        ZDR --> Receipt["WORM Cryptographic Audit Receipt (0.000000 MB)"]
+    end

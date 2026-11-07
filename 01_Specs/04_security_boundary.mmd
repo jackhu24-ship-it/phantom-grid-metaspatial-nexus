@@ -1,0 +1,35 @@
+flowchart LR
+    subgraph CaptureDomain["Domain A: Optical Gesture Stream"]
+        QuestSensors["Meta Quest Cameras & Sensor Feed"]
+        RawJoints["25 Joint Coordinates per Hand (Biometric)"]
+        PublicCloud["External Multi-Tenant Cloud (BLOCKED: 0.00% Leak)"]
+    end
+
+    subgraph WebXRDMZ["Domain B: WebXR Sandboxed DMZ"]
+        VectorCanvas["Three.js Pure-Vector 3D Canvas"]
+        KinematicFilter["1.35x Kinematic Damping Filter"]
+        RadialAnchor["Seated Radial Anchor Clamping"]
+        SchemaGate["Pydantic Invariant Schema Gate"]
+    end
+
+    subgraph SovereignCore["Domain C: ASIL-D Sovereign Core"]
+        ShellEngine["Track A Shell State Machine"]
+        SwarmNodes["Planner & Executor Agent Swarm"]
+        OmniBridge["Omni-Hand FastMCP Gateway"]
+        VRAMGuard["50GB VRAM Hard Fuse Watchdog"]
+    end
+
+    subgraph ZDRPurgeLayer["Domain D: Physical Destruction Layer"]
+        Pass1["Pass 1: Bitwise Overwrite with 0xAA"]
+        Pass2["Pass 2: Complete Zeroization with 0x00"]
+        Seal["WORM Audit Cryptographic Seal (0.000000 MB)"]
+    end
+
+    QuestSensors --> RawJoints --> VectorCanvas
+    VectorCanvas --> KinematicFilter --> SchemaGate --> ShellEngine
+    ShellEngine --> SwarmNodes --> OmniBridge
+    SwarmNodes --> VRAMGuard
+    VRAMGuard --> Pass1
+    ShellEngine --> Pass1
+    Pass1 --> Pass2 --> Seal
+    CaptureDomain x-.-x PublicCloud

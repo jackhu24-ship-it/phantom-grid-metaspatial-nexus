@@ -76,4 +76,5 @@ Account Email: jackhu24@gmail.com
 https://jackhu24-ship-it.github.io/phantom-grid-metaspatial-nexus/
 
 * Demo Video Master Access (116s / 1440P @ 60 FPS):
-https://github.com/jackhu24-ship-it/phantom-grid-metaspatial-nexus/blob/main/05_DemoVideo_1440P/demo_video_1440p.mp4
+https://youtu.be/kxsa9TGjasM
+- GitHub Master Backup: https://github.com/jackhu24-ship-it/phantom-grid-metaspatial-nexus/blob/main/05_DemoVideo_1440P/demo_video_1440p.mp4

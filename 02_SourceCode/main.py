@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from typing import List, Dict, Any, Optional
 
 # Bridge to PHANToM GRID Omni-Hand Core Weapon (PG-MOD-OMNI-HAND-01)
-OMNI_HAND_DIR = Path(r"G:\我的雲端硬碟\260803_opencode\03_研發專區\PHANTOM_GRID_Omni_Hand")
+OMNI_HAND_DIR = Path(__file__).resolve().parents[2] / "PHANTOM_GRID_Omni_Hand"
 if str(OMNI_HAND_DIR) not in sys.path and OMNI_HAND_DIR.exists():
     sys.path.insert(0, str(OMNI_HAND_DIR))
 
