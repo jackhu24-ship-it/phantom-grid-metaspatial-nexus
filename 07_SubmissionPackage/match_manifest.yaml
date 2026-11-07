@@ -1,0 +1,29 @@
+match_id: "202611_Meta_VR_Start_Developer_Competition"
+tournament_title: "Meta VR Start Developer Competition 2026"
+organizer: "Meta (Facebook Technologies) via Devpost"
+submission_deadline: "2026-11-18 12:00 PM PST"
+prize_pool: "$1,000,000 USD (Top Prize $20,000 ~ $100,000)"
+official_portal: "https://start-developer-competition-26.devpost.com/"
+participation_mode: "Solo Closed (PHANTOM GRID)"
+target_track: "Productivity & Best Agentic Interaction"
+phantom_core_weapon: "WebXR Hands-First Spatial Engine ✕ PG-MOD-OMNI-HAND-01 ✕ ASIL-D Multi-Agent Orchestrator ✕ Three.js 3DGS Manifold ✕ 2-Pass ZDR Memory Purge"
+
+required_deliverables:
+  - "01_Specs"
+  - "02_SourceCode"
+  - "03_CoverImage_16x9"
+  - "04_Slides_PDF"
+  - "05_DemoVideo_1440P"
+  - "06_LiveApp"
+  - "07_SubmissionPackage"
+  - "08_AuditReceipts"
+  - "09_ChaosReports"
+  - "10_Releases"
+
+compliance_invariants:
+  spec_first: true
+  hands_first_tracking: true
+  webxr_direct_launch: true
+  vram_ceiling_gb: 50.0
+  zdr_zero_residue_mb: 0.000000
+  co_signed_by: "COMMANDER JACK HU ✕ COMMANDER XIAOMI"
